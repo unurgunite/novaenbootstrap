@@ -1,0 +1,48 @@
+<% @posts.each do |post| %>
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h2 lang="ru"><%= post.title %></h2>
+        <p lang="ru"><%= post.body %></p>
+
+        <button class="myBtn" data-id=<%= post.id %>>Open Modal</button>
+
+
+        <div class="modal" data-id=<%= post.id %>>
+
+          <div class="modal-content">
+            <span class="close" data-id=<%= post.id %>>&times;</span>
+            <p><%= post.translation %></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<!-- The Modal -->
+
+<%= will_paginate class: "apple_pagination" %>
+<%= javascript_tag do %>
+  const btns = document.getElementsByClassName("myBtn");
+  const spans = document.getElementsByClassName("close");
+
+  let i;
+  for (i = 0; i < btns.length; i++) {
+    const btn = btns[i];
+    btn.onclick = function (event) {
+        const modal = document.querySelector("div.modal[data-id=\"" + this.dataset.id + "\"]");
+        modal.style.display = "block";
+        modal.classList.add("visible");
+    };
+  }
+
+  for (i = 0; i < spans.length; i++) {
+    const span = spans[i];
+    span.onclick = function (event) {
+        const modal = document.querySelector("div.modal[data-id=\"" + this.dataset.id + "\"]");
+        modal.style.display = "none";
+        modal.classList.remove("visible");
+    };
+  }
+<% end %>
