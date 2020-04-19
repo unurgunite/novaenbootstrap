@@ -1,0 +1,7 @@
+<%= form_for :post, :url => :posts do |f| %>
+  <%= content_tag :p, "Create a New Post" %>
+  <%= f.text_area :title, id: "a-title", placeholder: "The story name" %><br/>
+  <%= f.text_area :body, id: "a-body", placeholder: "Input there your story..." %><br/>
+  <%= f.text_area :translation, id: "a-tr", placeholder: "Enter the translation of your story" %><br/>
+  <%= f.submit "+", id: "plus-button" %>
+<% end %>

@@ -14,7 +14,7 @@ class PostsController < ApplicationController
 
   def create
     # === Saving post
-    @posts = Post.new(post_params) 
+    @posts = Post.new(post_params)
     @posts.save
     redirect_to @posts
   end
