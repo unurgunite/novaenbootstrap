@@ -1,6 +1,6 @@
 # Novaenbootstrap
 
-Here you can see the simplest template of the social network where you can create posts, users (in the next patch) etc.
+Here you can see the simplest template of the social network where you can create articles, translations of them, users (in the next patch) etc.
 <br>
 <br>
 [![Ruby](https://cdn.emojidex.com/emoji/seal/Ruby.png "Ruby") ](https://www.ruby-lang.org)
